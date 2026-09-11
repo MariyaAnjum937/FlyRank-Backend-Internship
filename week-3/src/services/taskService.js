@@ -3,20 +3,20 @@ class TaskService {
         this.repository = repository;
     }
 
-    createTask(title) {
-        return this.repository.create(title);
+    async createTask(title) {
+        return await this.repository.create(title);
     }
 
-    getAllTasks() {
-        return this.repository.getAll();
+    async getAllTasks() {
+        return await this.repository.getAll();
     }
 
-    getTask(id) {
-        return this.repository.getById(id);
+    async getTask(id) {
+        return await this.repository.getById(id);
     }
 
-    deleteTask(id) {
-        return this.repository.delete(id);
+    async deleteTask(id) {
+        return await this.repository.delete(id);
     }
 }
 

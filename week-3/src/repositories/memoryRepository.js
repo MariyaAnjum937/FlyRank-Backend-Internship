@@ -4,7 +4,7 @@ class MemoryRepository {
         this.nextId = 1;
     }
 
-    create(title) {
+    async create(title) {
         const task = {
             id: this.nextId,
             title: title
@@ -16,15 +16,15 @@ class MemoryRepository {
         return task;
     }
 
-    getAll() {
+    async getAll() {
         return this.tasks;
     }
 
-    getById(id) {
+    async getById(id) {
         return this.tasks.find(task => task.id === id);
     }
 
-    delete(id) {
+    async delete(id) {
         const index = this.tasks.findIndex(task => task.id === id);
 
         if (index === -1) {
