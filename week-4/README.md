@@ -1,4 +1,3 @@
-Absolutely 😭❤️ Here it is **all in one single block** so you can copy-paste directly into `README.md`:
 
 ````markdown
 # FlyRank Backend Internship — Week 4
