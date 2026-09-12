@@ -127,8 +127,8 @@ Supabase credentials are stored in environment variables rather than directly in
 Required environment variables:
 
 ```env
-SUPABASE_URL=your_project_url
-SUPABASE_KEY=your_anon_key
+SUPABASE_URL=supabase_url
+SUPABASE_KEY=supabase_publishable_key
 PORT=3000
 ```
 
