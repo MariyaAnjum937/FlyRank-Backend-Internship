@@ -1,6 +1,6 @@
 const express = require("express");
 const supabase = require("../../supabase");
-
+const authMiddleware = require('../middleware/auth.middleware');
 const router = express.Router();
 
 // ====================
@@ -78,6 +78,20 @@ router.post("/login", async (req, res) => {
       error: "Internal server error"
     });
   }
+});
+
+// LOGOUT
+console.log("authMiddleware:", typeof authMiddleware);
+router.post("/logout", authMiddleware, async (req, res) => {
+    const { error } = await supabase.auth.signOut(req.token);
+
+    if (error) {
+        return res.status(401).json({
+            error: "Logout failed"
+        });
+    }
+
+    return res.status(204).send();
 });
 
 module.exports = router;
